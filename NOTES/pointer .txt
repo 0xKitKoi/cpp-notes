@@ -1,0 +1,17 @@
+Pointers are what the name implies, it points to something whether that be a variable, an object or even a function. 
+You declare one with a memory address to point to, and the indirection operator which both assigns a value to point to,
+ and returns the value of the memory location that it's pointing at. If we want a pointer to an integer and we want 
+ a function to change that variable, we pass a pointer to that integer as a parameter to a function. 
+ Declaring that pointer would look like:
+
+int *pointerName = &intVarName; 
+
+the ampersand is how you get the memory address of the integer variable, and it's being stored in the pointer we named pointerName with 
+that asterisk. If we pass that pointer into a function, that function can then change what that integer variable
+ is without creating a new variable. You may not have known, but you have already used a pointer when you create 
+ an array. The array/pointer duality law means that pointers to arrays support pointer arithmetic. 
+ This means that you can add an integer offset to an array pointer to point to a different location in an array, 
+ just like having the offset in brackets for a certain index of the array. Pointers can be allocated dynamically, 
+ on what is called the heap. The heap is a hierarchical data structure that is intended to be dynamically allocated 
+ and deallocated by programs so the memory can become fragmented, whereas the stack is linear and cannot be
+ fragmented  We use pointers commonly for data structures such as linked lists and trees. 

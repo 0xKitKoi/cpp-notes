@@ -1,0 +1,15 @@
+﻿main.obj : error LNK2019: unresolved external symbol _SDL_GetError referenced in function "bool __cdecl init(void)" (?init@@YA_NXZ)
+main.obj : error LNK2019: unresolved external symbol _SDL_RWFromFile referenced in function "bool __cdecl loadMedia(void)" (?loadMedia@@YA_NXZ)
+main.obj : error LNK2019: unresolved external symbol _SDL_FreeSurface referenced in function "void __cdecl close(void)" (?close@@YAXXZ)
+main.obj : error LNK2019: unresolved external symbol _SDL_LoadBMP_RW referenced in function "bool __cdecl loadMedia(void)" (?loadMedia@@YA_NXZ)
+main.obj : error LNK2019: unresolved external symbol _SDL_UpperBlit referenced in function _SDL_main
+main.obj : error LNK2019: unresolved external symbol _SDL_CreateWindow referenced in function "bool __cdecl init(void)" (?init@@YA_NXZ)
+main.obj : error LNK2019: unresolved external symbol _SDL_GetWindowSurface referenced in function "bool __cdecl init(void)" (?init@@YA_NXZ)
+main.obj : error LNK2019: unresolved external symbol _SDL_UpdateWindowSurface referenced in function _SDL_main
+main.obj : error LNK2019: unresolved external symbol _SDL_Delay referenced in function _SDL_main
+main.obj : error LNK2019: unresolved external symbol _SDL_Init referenced in function "bool __cdecl init(void)" (?init@@YA_NXZ)
+main.obj : error LNK2019: unresolved external symbol _SDL_Quit referenced in function "void __cdecl close(void)" (?close@@YAXXZ)
+MSVCRTD.lib(exe_main.obj) : error LNK2019: unresolved external symbol _main referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+C:\SDL2\SDL2.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+C:\SDL2\SDL2main.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+C:\Users\ShawnCena121\source\repos\learningsdl\Debug\learningsdl.exe : fatal error LNK1120: 12 unresolved externals

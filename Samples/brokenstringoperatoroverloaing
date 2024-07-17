@@ -1,0 +1,65 @@
+#include <string>
+#include <iostream>
+#include <sstream>
+using namespace std;
+
+class myStr {
+private:
+    string _STR;
+public:
+    string getString() const {
+        return _STR;
+    }
+    int getStrLen() const{
+        return _STR.length();
+    }
+    myStr operator<(myStr const &obj) {
+        string letters_1, letters_2, numbers_1, numbers_2;
+        // split first string
+        for (int i = 0; i < _STR.length(); i++) {
+            if (isdigit(_STR.at(i))) {
+                numbers_1 += _STR.at(i);
+            }
+            else {
+                letters_1 += _STR.at(i);
+            }
+        }
+        // split second string
+        string tmp = obj.getString();
+        for (int i = 0; i < obj.getStrLen(); i++) {
+            if (isdigit(tmp.at(i))) {
+                numbers_2 += tmp.at(i);
+            }
+            else {
+                letters_2 += tmp.at(i);
+            }
+        }
+        
+        if (letters_1 > letters_2) {
+            if (to_string(numbers_1) > to_string(numbers_2)) {
+                return _STR;
+            }
+            else {
+                return obj;
+            }
+        }
+        else if (letters_2 > letters_1) {
+            if (to_string(numbers_2) > to_string(numbers_1)) {
+                return obj;
+            }
+            else {
+                return _STR;
+            }
+        }
+        
+    }
+};
+
+/*
+string operator < (string const &obj) {
+    if ()
+    string letters_1, numbers_1, letters_2, numbers_2;
+    for (int i = 0; i < o)
+}
+*/ 
+

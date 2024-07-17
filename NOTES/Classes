@@ -1,0 +1,22 @@
+this example has an Order and Item class.
+
+The Order constructor must call the Item constructor. That is achieved with an initializer list. The initializer list is placed before the opening brace of the constructor. The list starts with a colon and contains names of data members with their construction arguments.
+
+Order::Order(string customer_name, string item_description, double item_price)
+   : article(item_description, item_price)
+{
+   customer = customer_name;
+}
+Initializers are separated by commas. They can also initialize a data member as a copy of a value of the same type. Here is another way of writing the Order constructor:
+
+Order::Order(string customer_name, string item_description, double item_price)
+   : article(item_description, item_price), customer(customer_name)
+{
+}
+
+Ive seen this before.. haha
+You can also use the uniform syntax to initialize data members in a constructor. For example, the Order constructor of Special Topic 9.8 can be written as
+
+Order::Order(string customer_name, string item_description, double item_price)
+  : article{item_description, item_price}, customer{customer_name}
+{}

@@ -1,0 +1,64 @@
+Each member function has a special parameter variable, called this, which is a pointer to the implicit parameter. For example, consider the CashRegister::add_item function. If you call
+
+register1.add_item(1.95) 
+then the this pointer has type CashRegister* and points to the register1 object.
+You can use the this pointer inside the definition of a member function. For example, you can implement the add_item function as
+
+void CashRegister::add_item(double price)
+{
+   this->item_count++;
+   this->total_price = this->total_price + price;
+}
+Here, the expression this->item_count refers to the item_count data member of the implicit parameter (which is register1.item_count in our example). Some programmers like to use the this pointer in this fashion to make it clear that item_count is a data member and not a variable.
+
+Here is a program that uses pointers to objects.
+
+#############################################################################
+One use of the this pointer is to access a data member when there is a local variable with the same name. For example, if a member function has a local variable x and a data member x, then you can refer to the data member as this->x.
+
+Use this fact to complete the constructor implementation of this Point class:
+
+class Point
+{
+public:
+   Point(int x, int y);
+   int get_x() const;
+   int get_y() const;
+private:
+   int x;
+   int y;
+};
+
+
+#########################
+#include <iostream>
+using namespace std;
+
+class Point {
+public:
+    Point(int x, int y);
+    int get_x() const;
+    int get_y() const;
+private:
+    int x;
+    int y;
+};
+
+Point::Point(int x, int y) {
+    this->x = x;
+    this->y = y;
+}
+int Point::get_x() const {
+    return x;
+}
+int Point::get_y() const {
+    return y;
+}
+int main() {
+    int x;
+    int y;
+    cin >> x >> y;
+    Point my_point(x,y);
+    cout << "Do you get (" << my_point.get_x() << ", " << my_point.get_y() << ")\n";
+    return 0;
+}
